@@ -1,13 +1,13 @@
 import { Component } from "react";
 import scss from "./components/App/App.module.scss";
 
-import Section from "./components/Section/Section";
+import Section from "./components/Section";
 
-import Statistic from "./components/Statistic/Statistic";
+import Statistic from "./components/Statistic";
 
-import FeedbackOptions from "./components/FeedbackOptions/FeedbackOptions";
+import FeedbackOptions from "./components/FeedbackOptions";
 
-import Message from "./components/Notification/Notification";
+import Message from "./components/Notification";
 
 export default class App extends Component {
   state = {
