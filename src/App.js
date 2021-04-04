@@ -16,7 +16,7 @@ export default class App extends Component {
     bad: 0,
   };
 
-  handle = (event) => {
+  onLeaveFeedback = (event) => {
     const { name } = event.target;
     this.setState((state) => ({ [name]: state[name] + 1 }));
   };
@@ -37,11 +37,15 @@ export default class App extends Component {
     const { good, neutral, bad } = this.state;
     const total = this.countTotal();
     const positivFeedback = this.countPercentPositivFeedback();
+    const objkey = Object.keys(this.state);
 
     return (
       <div className={scss.container}>
         <Section title="Please leave feedback"></Section>
-        <FeedbackOptions options={this.state} onLeaveFeedback={this.handle} />
+        <FeedbackOptions
+          options={objkey}
+          onLeaveFeedback={this.onLeaveFeedback}
+        />
         <Section title="Statistics">
           {total === 0 ? (
             <Message message="No feedback given" />

@@ -1,5 +1,4 @@
 import ProtoType from "prop-types";
-import scss from "./Statistic.module.scss";
 
 const Statistic = ({ good, neutral, bad, total, positivFeedback }) => {
   return (

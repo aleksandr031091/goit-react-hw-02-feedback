@@ -1,35 +1,21 @@
 import ProtoType from "prop-types";
 import scss from "./FeedbackOptions.module.scss";
+import shortid from "shortid";
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <>
-      <div>
+      {options.map((option) => (
         <button
+          key={shortid.generate()}
           className={scss.button}
           type="button"
-          name="good"
+          name={option}
           onClick={onLeaveFeedback}
         >
-          Good
+          {option}
         </button>
-        <button
-          className={scss.button}
-          type="button"
-          name="neutral"
-          onClick={onLeaveFeedback}
-        >
-          Neutral
-        </button>
-        <button
-          className={scss.button}
-          type="button"
-          name="bad"
-          onClick={onLeaveFeedback}
-        >
-          Bad
-        </button>
-      </div>
+      ))}
     </>
   );
 };
@@ -37,8 +23,6 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 export default FeedbackOptions;
 
 FeedbackOptions.prototype = {
+  options: ProtoType.array.isRequired,
   onLeaveFeedback: ProtoType.func.isRequired,
-  good: ProtoType.number.isRequired,
-  neutral: ProtoType.number.isRequired,
-  bad: ProtoType.number.isRequired,
 };
