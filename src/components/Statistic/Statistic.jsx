@@ -4,11 +4,11 @@ import scss from "./Statistic.module.scss";
 const Statistic = ({ good, neutral, bad, total, positivFeedback }) => {
   return (
     <>
-      <p>Good:{good}</p>
-      <p>Neutral:{neutral}</p>
-      <p>Bad:{bad}</p>
-      <p>Total:{total}</p>
-      <p>Positiv feedback:{positivFeedback}%</p>
+      <p>Good: {good}</p>
+      <p>Neutral: {neutral}</p>
+      <p>Bad: {bad}</p>
+      <p>Total: {total}</p>
+      <p>Positiv feedback: {positivFeedback} %</p>
     </>
   );
 };
